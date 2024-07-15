@@ -1,7 +1,7 @@
 # from turtle import Turtle, Screen
 # timmy = Turtle()
 # print(timmy)
-# timmy.shape("turtle") # objecctMethod
+# timmy.shape("turtle") # objectMethod
 # timmy.color("blue")
 # timmy.forward(120)
 #

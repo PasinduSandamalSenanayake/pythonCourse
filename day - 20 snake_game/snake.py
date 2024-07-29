@@ -15,13 +15,18 @@ class Snake:
     def create_snake(self):
         # This for loop use turn the snake
         for position in start_position:
-            snake = Turtle()
-            snake.shape("square")
-            snake.color("white")
-            snake.penup()
-            snake.goto(position)
-            self.all_snake.append(snake)
+            self.add_snake(position)
 
+    def add_snake(self, position):
+        snake = Turtle()
+        snake.shape("square")
+        snake.color("white")
+        snake.penup()
+        snake.goto(position)
+        self.all_snake.append(snake)
+
+    def extend(self):
+        self.add_snake(self.all_snake[-1].position())  # all_snake[-1] is last part of the snake
     def move(self):
         for snake_num in range(len(self.all_snake) - 1, 0, -1):  # range(start,end,step)
             new_x = self.all_snake[snake_num - 1].xcor()  # go forward by one step

@@ -7,4 +7,3 @@ a = 5
 with open("my_file.txt", mode="a") as file:
     file.write(f"\n{a}")
 
-    

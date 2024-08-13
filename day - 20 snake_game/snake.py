@@ -35,6 +35,13 @@ class Snake:
 
         self.head.forward(move_distance)  # first snake part not move forward, stop all the part of the snake in the position 0
 
+    def reset(self):
+        for seg in self.all_snake:
+            seg.goto(1000, 1000)
+        self.all_snake.clear()
+        self.create_snake()
+        self.head = self.all_snake[0]
+
     def up(self):
         if self.head.heading() != Down:
             self.head.setheading(Up)

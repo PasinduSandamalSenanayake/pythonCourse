@@ -12,7 +12,8 @@ all_states = state_data.state.to_list()
 guessed_states = []
 
 while len(guessed_states) < 50:
-    states_answer = screen.textinput(title=f"{len(guessed_states)}/50 states correct", prompt="What is the states?").title() # when use the title() first letter of the word will be capital
+    states_answer = screen.textinput(title=f"{len(guessed_states)}"
+                                           f"/50 states correct", prompt="What is the states?").title() # when use the title() first letter of the word will be capital
 
     if states_answer == "Exit":
         missing_states = []

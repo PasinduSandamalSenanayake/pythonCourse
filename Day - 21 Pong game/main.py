@@ -15,6 +15,8 @@ l_paddle = Paddle((-350, 0))
 ball = Ball()
 scoreboard = ScoreBoard()
 
+winning_score = 5
+
 screen.listen()
 screen.onkey(r_paddle.go_up, "Up")
 screen.onkey(r_paddle.go_down, "Down")
@@ -47,6 +49,17 @@ while game_is_on:
         ball.reset_position()
         scoreboard.right_score()
 
+    if scoreboard.r_score == winning_score or scoreboard.l_score == winning_score:
+        game_is_on = False
+
+
+turtle = Turtle()
+turtle.goto(0, 0)
+turtle.color("green")
+if scoreboard.r_score == winning_score:
+    turtle.write("Right is winner", align="center", font=("Courier", 40, "normal"))
+elif scoreboard.l_score == winning_score:
+    turtle.write("Left is winner", align="center", font=("Courier", 40, "normal"))
 
 
 

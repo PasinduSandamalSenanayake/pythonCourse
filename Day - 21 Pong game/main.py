@@ -36,7 +36,8 @@ while game_is_on:
         ball.bounce_y()
 
     # Detect collision with paddle
-    if ball.distance(r_paddle) < 50 and ball.xcor() > 320 or ball.distance(l_paddle) < 50 and ball.xcor() < -320:
+    if (ball.distance(r_paddle) < 50 and ball.xcor() > 320 or
+            ball.distance(l_paddle) < 50 and ball.xcor() < -320):
         ball.bounce_x()
 
     # missed the r_paddle
@@ -49,7 +50,8 @@ while game_is_on:
         ball.reset_position()
         scoreboard.right_score()
 
-    if scoreboard.r_score == winning_score or scoreboard.l_score == winning_score:
+    if (scoreboard.r_score == winning_score or
+            scoreboard.l_score == winning_score):
         game_is_on = False
 
 

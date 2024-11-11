@@ -59,6 +59,21 @@ def save():
             website_input.delete(0, END)
             password_input.delete(0, END) #(0, END) 0 means start of the text and END means end of the text
 
+# find password
+
+def find_password():
+    web_site = website_input.get()
+    with open("data.json") as data_file:
+        data = json.load(data_file)
+        if web_site in data:
+            email = data[web_site]["email"]
+            password = data[web_site]["password"]
+            print(f"{email} - {password}")
+            messagebox.showinfo(title=f"{web_site} details", message=f"email = {email}\npassword = {password}")
+            website_input.delete(0, END)
+        else:
+            messagebox.showinfo(title="Wrong web site", message="Please enter valid web site")
+            website_input.delete(0, END)
 
 # UI Design
 
@@ -74,15 +89,17 @@ canvas.grid(row=0, column=1)
 name_label = Label(text="Website:", bg="#DFF2EB")
 name_label.grid(row=1, column=0)
 
-website_input = Entry(width=50)
-website_input.grid(row=1, column=1, columnspan=2) # columnspan means , How many columns its span, column=1 is the starting column
+website_input = Entry(width=32)
+website_input.grid(row=1, column=1)
 
+search_button = Button(text="Search", bg="#7AB2D3", width=14, command=find_password)
+search_button.grid(row=1, column=2)
 
 name_email = Label(text="Email/Username:", bg="#DFF2EB")
 name_email.grid(row=2, column=0)
 
 email_input = Entry(width=50)
-email_input.grid(row=2, column=1, columnspan=2)
+email_input.grid(row=2, column=1, columnspan=2) # columnspan means , How many columns its span, column=1 is the starting column
 email_input.insert(0, "sandamal@gmail.com") # 0 means start point of the text
 
 

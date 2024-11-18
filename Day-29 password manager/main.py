@@ -65,7 +65,7 @@ name_email.grid(row=2, column=0)
 
 email_input = Entry(width=50)
 email_input.grid(row=2, column=1, columnspan=2)
-email_input.insert(0, "sandamal@gmail.com") # 0 means start point of the text
+# email_input.insert(0, "sandamal@gmail.com") # 0 means start point of the text
 
 
 name_password = Label(text="Password:", bg="#DFF2EB")

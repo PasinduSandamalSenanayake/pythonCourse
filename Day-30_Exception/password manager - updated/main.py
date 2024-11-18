@@ -45,7 +45,7 @@ def save():
             with open("data.json", "r") as data_file:
                 #Reading old data
                 data = json.load(data_file)
-        except FileNotFoundError:
+        except FileNotFoundError: # file not exist
             with open("data.json", "w") as data_file:
                 json.dump(new_data, data_file, indent=4)
         else:
@@ -100,7 +100,7 @@ name_email.grid(row=2, column=0)
 
 email_input = Entry(width=50)
 email_input.grid(row=2, column=1, columnspan=2) # columnspan means , How many columns its span, column=1 is the starting column
-email_input.insert(0, "sandamal@gmail.com") # 0 means start point of the text
+email_input.insert(0, "sandamal@gmail.com") # 0 means start point of the text, default text
 
 
 name_password = Label(text="Password:", bg="#DFF2EB")
